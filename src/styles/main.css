@@ -1,0 +1,15 @@
+/* src/styles/main.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+}
+
+/* Additional styles for responsiveness and layout */
