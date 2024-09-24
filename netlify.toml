@@ -1,8 +1,21 @@
 [build]
   command = "npm run build"
-  publish = "build"
+  publish = "build/"
 
+# Production deploy settings.
+[context.production.environment]
+  REACT_APP_ENV="production"
+  REACT_APP_API="production-url"
+
+# Netlify deploy preview settings.
+[context.deploy-preview.environment]
+  REACT_APP_ENV="stage"
+  REACT_APP_API="staging-url"
+
+# Configure redirects and rewrites. We rewrite all requests to the root to allow
+# the single page app kick in on the client and perform any necessary routing
+# there.
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/"
   status = 200
